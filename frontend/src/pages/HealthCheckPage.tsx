@@ -27,7 +27,7 @@ export default function HealthCheckPage() {
   const [step, setStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const recognitionRef = useRef<any | null>(null);
 
   // Form state
   const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Brain, CheckCircle, AlertTriangle, Stethoscope, Activity,
-  Heart, ArrowRight, Home, Shield, Calendar, FileText, Info
+  Heart, ArrowRight, Home, Shield, Calendar, FileText, Info, Navigation
 } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import RiskMeter from '../components/health/RiskMeter';
