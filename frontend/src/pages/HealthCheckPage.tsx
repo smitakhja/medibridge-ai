@@ -77,8 +77,8 @@ export default function HealthCheckPage() {
   // Voice input
   const toggleVoice = () => {
     const SpeechRecognitionAPI =
-      (window as unknown as { SpeechRecognition?: SpeechRecognition; webkitSpeechRecognition?: SpeechRecognition }).SpeechRecognition ||
-      (window as unknown as { webkitSpeechRecognition?: SpeechRecognition }).webkitSpeechRecognition;
+      (window as unknown as { SpeechRecognition?: any; webkitSpeechRecognition?: any }).SpeechRecognition ||
+      (window as unknown as { webkitSpeechRecognition?: any }).webkitSpeechRecognition;
 
     if (!SpeechRecognitionAPI) {
       alert('Voice recognition is not supported in your browser. Please use Chrome or Edge.');
@@ -91,7 +91,7 @@ export default function HealthCheckPage() {
       return;
     }
 
-    const recognition = new (SpeechRecognitionAPI as unknown as { new(): SpeechRecognition })();
+    const recognition = new (SpeechRecognitionAPI as unknown as { new(): any })();
     recognition.continuous = false;
     recognition.interimResults = false;
     recognition.lang = 'en-IN';
