@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import {
   Brain, CheckCircle, AlertTriangle, Stethoscope, Activity,
-  Heart, ArrowRight, Shield, Navigation, Calendar, Info,
-  Home, PhoneCall, FileText
+  Heart
 } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import RiskMeter from '../components/health/RiskMeter';
@@ -24,7 +23,6 @@ const ANALYSIS_STEPS = [
 
 export default function AnalysisPage() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const [analyzing, setAnalyzing] = useState(true);
   const [analysisStep, setAnalysisStep] = useState(0);
   const [assessment, setAssessment] = useState<HealthAssessment | null>(null);

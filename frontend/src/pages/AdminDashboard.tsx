@@ -103,7 +103,7 @@ export default function AdminDashboard() {
                     paddingAngle={3} dataKey="value">
                     {RISK_DISTRIBUTION.map((entry, i) => <Cell key={i} fill={entry.color} />)}
                   </Pie>
-                  <Tooltip formatter={(v: number) => [`${v}%`, '']} contentStyle={{ borderRadius: '12px' }} />
+                  <Tooltip formatter={(v: any) => [`${v}%`, '']} contentStyle={{ borderRadius: '12px' }} />
                 </PieChart>
               </ResponsiveContainer>
               <div className="grid grid-cols-2 gap-2 mt-3">

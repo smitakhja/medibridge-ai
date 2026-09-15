@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { AreaChart, Area, RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
-import { Activity, TrendingUp, Heart, Moon, Footprints, Droplets, Brain, Target, Plus, Info } from 'lucide-react';
+import { Activity, TrendingUp, Heart, Moon, Footprints, Droplets, Brain, Target, Plus } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 
 const DAYS_HISTORY = ['Sep 1', 'Sep 3', 'Sep 5', 'Sep 7', 'Sep 9', 'Sep 11', 'Sep 13', 'Sep 15'];
@@ -161,7 +161,7 @@ export default function HealthDashboard() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
                   <XAxis dataKey="day" tick={{ fontSize: 11, fill: '#9CA3AF' }} />
                   <YAxis domain={[0, 100]} tick={{ fontSize: 11, fill: '#9CA3AF' }} />
-                  <Tooltip contentStyle={{ borderRadius: '12px', border: '1px solid #E5E7EB' }} formatter={(v: number) => [`${v}/100`, 'Risk Score']} />
+                  <Tooltip contentStyle={{ borderRadius: '12px', border: '1px solid #E5E7EB' }} formatter={(v: any) => [`${v}/100`, 'Risk Score']} />
                   <Area type="monotone" dataKey="score" stroke="#0D9488" strokeWidth={2} fill="url(#scoreGrad)" dot={{ fill: '#0D9488', r: 4 }} />
                 </AreaChart>
               </ResponsiveContainer>

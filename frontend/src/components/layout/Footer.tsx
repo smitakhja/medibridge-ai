@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
+import { Heart, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -76,14 +76,6 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* Social */}
-            <div className="flex gap-3 mt-6">
-              {[Twitter, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-all duration-200 group">
-                  <Icon className="w-4 h-4 group-hover:text-white" />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 

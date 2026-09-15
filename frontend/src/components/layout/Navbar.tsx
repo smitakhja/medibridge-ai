@@ -65,7 +65,7 @@ export default function Navbar() {
           {/* Desktop nav links (authenticated) */}
           {isAuthenticated && (
             <div className="hidden md:flex items-center gap-1">
-              {navLinks.map(({ key, href, icon: Icon, label }) => (
+              {navLinks.map(({ key, href, icon: Icon }) => (
                 <Link
                   key={href}
                   to={href}
@@ -226,7 +226,7 @@ export default function Navbar() {
             <div className="px-4 py-3 space-y-1">
               {isAuthenticated ? (
                 <>
-                  {navLinks.map(({ key, href, icon: Icon, label }) => (
+                  {navLinks.map(({ key, href, icon: Icon }) => (
                     <Link
                       key={href}
                       to={href}
