@@ -1,0 +1,15 @@
+{
+  "name": "medibridge-ai-backend",
+  "version": "1.0.0",
+  "description": "MediBridge AI Backend API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "echo 'No build step needed for JS backend'"
+  },
+  "keywords": ["healthcare", "AI", "medical"],
+  "author": "MediBridge AI Team",
+  "license": "MIT",
+  "type": "commonjs"
+}

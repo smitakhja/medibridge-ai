@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer components {
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/50 shadow-glass rounded-2xl;
+  }
+  .glass-card-dark {
+    @apply bg-slate-900/70 backdrop-blur-md border border-white/10 shadow-glass rounded-2xl;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-teal-500 to-purple-600 bg-clip-text text-transparent;
+  }
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
+  }
+
+  /* Risk level colors */
+  .risk-low {
+    @apply bg-green-50 border-green-200 text-green-700;
+  }
+  .risk-moderate {
+    @apply bg-amber-50 border-amber-200 text-amber-700;
+  }
+  .risk-high {
+    @apply bg-orange-50 border-orange-200 text-orange-700;
+  }
+  .risk-urgent {
+    @apply bg-red-50 border-red-200 text-red-700;
+  }
+
+  /* Premium button styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-6 py-3 rounded-xl
+    hover:from-blue-700 hover:to-blue-800 active:scale-95 transition-all duration-200 shadow-medical-blue
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl border-2 border-blue-600
+    hover:bg-blue-50 active:scale-95 transition-all duration-200
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  .btn-emergency {
+    @apply bg-gradient-to-r from-red-600 to-red-700 text-white font-bold px-6 py-3 rounded-xl
+    hover:from-red-700 hover:to-red-800 active:scale-95 transition-all duration-200 shadow-emergency
+    focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  }
+  .btn-teal {
+    @apply bg-gradient-to-r from-teal-600 to-teal-700 text-white font-semibold px-6 py-3 rounded-xl
+    hover:from-teal-700 hover:to-teal-800 active:scale-95 transition-all duration-200
+    focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2;
+  }
+  .btn-ghost {
+    @apply text-gray-600 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 active:scale-95 transition-all duration-200;
+  }
+
+  /* Input field */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 placeholder-gray-400
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+    transition-all duration-200 text-sm;
+  }
+
+  /* Metric card */
+  .metric-card {
+    @apply bg-white rounded-2xl p-5 shadow-card hover:shadow-card-hover transition-shadow duration-300 border border-gray-100;
+  }
+
+  /* Section heading */
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold text-gray-900 leading-tight;
+  }
+  .section-subtitle {
+    @apply text-lg text-gray-500 leading-relaxed;
+  }
+
+  /* Shimmer loading */
+  .skeleton {
+    @apply bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 rounded-lg;
+    background-size: 400px 100%;
+    animation: shimmer 1.5s linear infinite;
+  }
+
+  /* Heartbeat line */
+  .heartbeat-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 2s ease-out forwards, heartbeat 1.5s ease-in-out 2s infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Glassmorphism blur */
+  .backdrop-saturate-150 {
+    backdrop-filter: saturate(150%) blur(12px);
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Custom animations */
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.ripple-animation {
+  animation: ripple 1.5s linear infinite;
+}
+
+/* Progress bar animation */
+.progress-fill {
+  transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
